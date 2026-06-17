@@ -2,6 +2,7 @@
   "name": "corcoiote-backend",
   "type": "module",
   "devDependencies": {
+    "@types/node": "^25.9.3",
     "lefthook": "^2.1.9",
     "typescript": "^6.0.3"
   },
