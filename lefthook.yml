@@ -1,0 +1,8 @@
+pre-commit:
+coommands:
+bioome:
+run: npx biome check -- write .
+stage_fixed: true
+
+
+
