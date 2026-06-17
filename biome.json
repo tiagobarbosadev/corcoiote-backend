@@ -20,7 +20,7 @@
 	},
 	"javascript": {
 		"formatter": {
-			"quoteStyle": "simple"
+			"quoteStyle": "single"
 		}
 	},
 	"assist": {
