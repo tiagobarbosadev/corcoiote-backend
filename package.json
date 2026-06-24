@@ -1,6 +1,9 @@
 {
   "name": "corcoiote-backend",
   "type": "module",
+  "scripts": {
+    "dev": "node --watch --env-file=.env ./src/server.ts"
+  },
   "devDependencies": {
     "@types/node": "^25.9.3",
     "lefthook": "^2.1.9",
