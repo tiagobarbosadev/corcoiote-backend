@@ -1,6 +1,7 @@
 import { NotFoundError } from '../errors/index.ts';
+import type { CreateCustomer, UpdateCustomer } from '../schemas/customer.schema.ts';
+import type { Customer } from '../types.ts';
 import { customers } from '../mocks/customer.mock.ts';
-import type { CreateCustomer, Customer, UpdateCustomer } from '../types.ts';
 
 export function findAllCustomers(): Customer[] {
 	return customers;
