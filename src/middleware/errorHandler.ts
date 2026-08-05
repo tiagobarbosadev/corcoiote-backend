@@ -1,4 +1,4 @@
-import type { Request, Response, NextFunction } from 'express';
+import type { NextFunction, Request, Response } from 'express';
 import { NotFoundError, ValidationError } from '../errors/index.ts';
 
 export default function errorHandler(
@@ -6,11 +6,19 @@ export default function errorHandler(
 	_request: Request,
 	response: Response,
 	_next: NextFunction,
-) {
-	if (error instanceof NotFoundError || error instanceof ValidationError) {
-		response.status(error.statusCode).json({ error: error.message });
+): void {
+	if (error instanceof NotFoundError) {
+		response.status(error.statusCode).json({ message: error.message });
 		return;
 	}
+
+	if (error instanceof ValidationError) {
+		response
+			.status(error.statusCode)
+			.json({ message: error.message, fields: error.fields });
+	}
+
 	console.log(error);
+
 	response.status(500).json({ message: 'Erro interno do servidor.' });
 }
